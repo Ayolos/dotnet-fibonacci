@@ -32,7 +32,7 @@ jobs:
             echo "new_version=pr-${{ github.event.number }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
           fi
   build_docker:
-    #needs: tags
+    needs: tags
     uses: ./.github/workflows/Docker.yml
     with:
       image_name: "ayolos14/fibonacci"
